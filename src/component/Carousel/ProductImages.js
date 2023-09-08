@@ -3,7 +3,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 const ProductImages = (props) => {
-    //console.log(props)
+    //props.img.pop();
     const responsive = {
         desktop: {
           breakpoint: { max: 3000, min: 1024 },

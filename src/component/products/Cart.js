@@ -3,11 +3,17 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Layout from "../Layout/Layout";
 import CartProduct from "./CartProduct";
-
+import { useNavigate } from 'react-router-dom'
+import { useAuth } from  '../context/auth'
 
 
 function Cart() {
   let [cart, setCarts] = useState([]);
+  const [auth] = useAuth();
+  const navigate = useNavigate();
+  if(!auth.token){
+    navigate('/')
+  }
   const getCarts = async () => {
     const { data } = await axios.get("https://fakestoreapi.com/carts?userId=1");
     console.log(data[0].products);

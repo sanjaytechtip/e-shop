@@ -9,7 +9,7 @@ export default function PrivateRoute() {
 
     useEffect(() => {
         const authCheck = async()=>{
-            const res = await axios.post('users/15');
+            const res = await axios.get('/users/15');
             if(res.data.status){
                 setOk(true)
             }else{
